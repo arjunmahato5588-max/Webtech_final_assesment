@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arjun Kumar Mahato | WebTech Practical</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:radial-gradient(circle at top,#0f2027,#000);
+    color:#fff;
+    overflow-x:hidden;
+}
+
+/* animated background grid */
+.bg-grid{
+    position:fixed;
+    inset:0;
+    background:
+      linear-gradient(rgba(0,255,255,.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,255,255,.07) 1px, transparent 1px);
+    background-size:40px 40px;
+    z-index:-1;
+    animation:moveGrid 20s linear infinite;
+}
+@keyframes moveGrid{
+    from{background-position:0 0,0 0}
+    to{background-position:40px 40px,40px 40px}
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:70px 30px;
+}
+
+/* header */
+header{
+    text-align:center;
+    margin-bottom:90px;
+}
+
+header h1{
+    font-size:4rem;
+    font-weight:700;
+    background:linear-gradient(90deg,#00fff0,#6a5cff,#ff00ff);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+header p{
+    margin-top:15px;
+    letter-spacing:4px;
+    font-size:.9rem;
+    color:#aaa;
+}
+
+/* section */
+.section{
+    margin-bottom:90px;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:40px;
+    font-size:1.8rem;
+    color:#00fff0;
+    letter-spacing:2px;
+}
+
+/* cards */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:rgba(255,255,255,0.06);
+    backdrop-filter:blur(14px);
+    border-radius:18px;
+    padding:30px;
+    border:1px solid rgba(0,255,255,.25);
+    box-shadow:0 0 25px rgba(0,255,255,.15);
+    transition:.4s;
+    position:relative;
+    overflow:hidden;
+}
+
+.card::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(120deg,transparent,rgba(0,255,255,.15),transparent);
+    transform:translateX(-100%);
+}
+
+.card:hover::before{
+    transform:translateX(100%);
+    transition:1s;
+}
+
+.card:hover{
+    transform:translateY(-12px) scale(1.02);
+    box-shadow:0 0 45px rgba(0,255,255,.35);
+}
+
+.card span{
+    font-size:2rem;
+    color:#00fff0;
+    font-weight:700;
+}
+
+.card h3{
+    margin:15px 0 25px;
+    font-size:1.2rem;
+}
+
+.actions{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.btn{
+    text-decoration:none;
+    padding:12px;
+    border-radius:30px;
+    text-align:center;
+    font-size:.9rem;
+    transition:.3s;
+}
+
+.live{
+    background:linear-gradient(90deg,#00fff0,#6a5cff);
+    color:#000;
+    font-weight:600;
+}
+
+.code{
+    border:1px solid #00fff0;
+    color:#00fff0;
+}
+
+.btn:hover{
+    transform:scale(1.05);
+}
+
+/* footer */
+footer{
+    text-align:center;
+    margin-top:80px;
+    font-size:.85rem;
+    color:#aaa;
+}
+
+@media(max-width:600px){
+    header h1{font-size:2.6rem}
+}
+</style>
+</head>
+
+<body>
+
+<div class="bg-grid"></div>
+
+<div class="container">
+
+<header>
+    <h1>Arjun Kumar Mahato</h1>
+    <p>WEBTECH PRACTICAL </p>
+</header>
+
+<!-- JS SECTION -->
+<section class="section">
+    <div class="section-title">JavaScript (1–15)</div>
+    <div class="grid">
+        <script>
+            for(let i=1;i<=15;i++){
+                document.write(`
+                <div class="card">
+                    <span>${i}</span>
+                    <h3>Question ${i}</h3>
+                    <div class="actions">
+                        <a class="btn live" href="question${i}.html">View Live</a>
+                        <a class="btn code" target="_blank"
+                           href="https://github.com/arjunmahato5588-max/Webtech_final_assesment/blob/main/question${i}.html">
+                           View Code
+                        </a>
+                    </div>
+                </div>
+                `);
+            }
+        </script>
+    </div>
+</section>
+
+<!-- CSS SECTION -->
+<section class="section">
+    <div class="section-title">CSS (16–20)</div>
+    <div class="grid">
+        <script>
+            for(let i=16;i<=20;i++){
+                document.write(`
+                <div class="card">
+                    <span>${i}</span>
+                    <h3>Question ${i}</h3>
+                    <div class="actions">
+                        <a class="btn live" href="question${i}.html">View Live</a>
+                        <a class="btn code" target="_blank"
+                           href="https://github.com/arjunmahato5588-max/Webtech_final_assesment/blob/main/question${i}.html">
+                           View Code
+                        </a>
+                    </div>
+                </div>
+                `);
+            }
+        </script>
+    </div>
+</section>
+
+<!-- HTML SECTION -->
+<section class="section">
+    <div class="section-title">HTML (21–25)</div>
+    <div class="grid">
+        <script>
+            for(let i=21;i<=25;i++){
+                document.write(`
+                <div class="card">
+                    <span>${i}</span>
+                    <h3>Question ${i}</h3>
+                    <div class="actions">
+                        <a class="btn live" href="question${i}.html">View Live</a>
+                        <a class="btn code" target="_blank"
+                           href="https://github.com/arjunmahato5588-max/Webtech_final_assesment/blob/main/question${i}.html">
+                           View Code
+                        </a>
+                    </div>
+                </div>
+                `);
+            }
+        </script>
+    </div>
+</section>
+
+<footer>
+    © 2025 Arjun Kumar Mahato | WebTech Submission
+</footer>
+
+</div>
+</body>
+</html>
